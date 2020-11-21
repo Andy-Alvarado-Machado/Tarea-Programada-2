@@ -12,8 +12,8 @@ public class Nodo
 //Se crea el constrcutor de la clase Nodo
     public Nodo(String valor)
     {
-this.valor=valor;
-siguiente=null;
+        this.valor=valor;
+        siguiente=null;
     }
 
 }
