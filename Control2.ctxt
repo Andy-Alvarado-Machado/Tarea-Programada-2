@@ -1,6 +1,0 @@
-#BlueJ class context
-comment0.target=Control2
-comment0.text=\r\n\ separa\ los\ String\ y\ agraga\ elementos\ a\ la\ lista\r\n\ \r\n\ @author\ (James\ y\ Andy)\ \r\n\ @version\ (000001)\r\n
-comment1.params=args
-comment1.target=void\ main(java.lang.String[])
-numComments=2

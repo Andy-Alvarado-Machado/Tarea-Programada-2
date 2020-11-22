@@ -7,13 +7,13 @@
  */
 public class Nodo
 {
-  String valor;
-   Nodo siguiente;
-//Se crea el constrcutor de la clase Nodo
+    String informacion;
+    Nodo siguienteNodo;
+    //Se crea el constrcutor de la clase Nodo
     public Nodo(String valor)
     {
-        this.valor=valor;
-        siguiente=null;
+        this.informacion=valor;
+        siguienteNodo=null;
     }
-
+    
 }

@@ -12,7 +12,7 @@ public class Vista
     {
         String polinomio="";
         polinomio=JOptionPane.showInputDialog("Digite la operacion que desee realizar");
-       return polinomio;
+        return polinomio;
     }
     
     

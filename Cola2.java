@@ -27,18 +27,18 @@ public class Cola2
 
     }
     //En este metodo se integra un valor a la lista de tipo cola, por lo cual irá de primero de izquierda a derecha
-    public void insertar(String valor){
-        Nodo nuevo=new Nodo(valor);  
-        nuevo.valor=valor;
-        nuevo.siguiente=null;
-        if(colaVacia()){
-            inicioCola=nuevo;
-            ultimoCola=nuevo;
-
-        }else{
-            ultimoCola.siguiente=nuevo;
-            ultimoCola=nuevo;
-
+    public void agregarValor(String valor){
+        Nodo nuevoNodo = new Nodo(valor);
+        nuevoNodo.informacion = valor; 
+        nuevoNodo.siguienteNodo = null;
+        
+        System.out.println(valor);
+        if (colaVacia()) {
+            inicioCola = nuevoNodo;
+            ultimoCola = nuevoNodo;
+        } else {
+            ultimoCola.siguienteNodo = nuevoNodo;
+            ultimoCola= nuevoNodo;
         }
     }
     //Este metodo muestra el contenido de la lista tipo cola
@@ -46,8 +46,8 @@ public class Cola2
         Nodo recorrido = inicioCola;
         String colaInvertida="";
         while(recorrido != null){
-            Cola2 += recorrido.valor+" ";
-            recorrido = recorrido.siguiente;
+            Cola2 += recorrido.informacion+" ";
+            recorrido = recorrido.siguienteNodo;
         }
         String cadena [] = Cola2.split(" ");
         for(int i=cadena.length-1;i>=0;i--){
