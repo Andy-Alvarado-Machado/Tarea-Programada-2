@@ -11,6 +11,7 @@ import java.io.PrintWriter;
 import javax.swing.JOptionPane;
 public class Vista
 {
+    
     public String pedirPolinomio()
     {
         String polinomio="";

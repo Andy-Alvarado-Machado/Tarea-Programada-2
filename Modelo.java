@@ -5,16 +5,21 @@
  * @author (your name) 
  * @version (a version number or a date)
  */
+import javax.swing.JOptionPane;
+import java.io.IOException;
+import java.io.FileWriter;
+import java.io.PrintWriter;
 public class Modelo
 { 
     Cola cola = new Cola();
     Cola2 cola2 = new Cola2();
     Vista vista = new Vista();
+    
     public void separarPolinomios()
     {
         //Variables que conceden permisos para acceder a la modificacion de listas o de Strings
         //**************************************************************************
-        String polinomio=vista.pedirPolinomio();//4x+3x*2x-4x
+        String polinomio=vista.pedirPolinomio();
         int contador=0; //registra los caracteres en el sub string
 
         boolean vaciarMonomio=false;//nodo en el que se estara agregado el string
