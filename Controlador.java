@@ -11,8 +11,8 @@ public class Controlador
     Cola cola= new Cola();
     Cola2 cola2= new Cola2();
     public void ejecutar(){
-    modelo.separarPolinomios();
-    cola.mostrar();
-    cola2.mostrar();
+        modelo.separarPolinomios();
+        cola.mostrar();
+        cola2.mostrar();
     }
 }

@@ -8,7 +8,7 @@
 import javax.swing.JOptionPane;
 public class Cola
 {
-    private Nodo inicioCola,ultimoCola;
+       private Nodo inicioCola,ultimoCola;
     String Cola="";
     //Se crea el constrcutor de la clase Cola
     public Cola()
@@ -28,7 +28,7 @@ public class Cola
     }
     //En este metodo se integra un valor a la lista de tipo cola, por lo cual irá de primero de izquierda a derecha
     public void insertar(String valor){
-        Nodo nuevo=new Nodo(valor);  
+        Nodo nuevo=new Nodo(valor); 
         nuevo.valor=valor;
         nuevo.siguiente=null;
         if(colaVacia()){
