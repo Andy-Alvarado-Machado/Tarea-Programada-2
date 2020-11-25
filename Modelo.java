@@ -5,8 +5,10 @@
  * @author (your name) 
  * @version (a version number or a date)
  */
-import javax.swing.JOptionPane;
 import java.io.IOException;
+import java.io.FileReader;
+import java.io.BufferedReader;
+import javax.swing.JOptionPane;
 import java.io.FileWriter;
 import java.io.PrintWriter;
 public class Modelo
@@ -14,7 +16,7 @@ public class Modelo
     Cola cola = new Cola();
     Cola2 cola2 = new Cola2();
     Vista vista = new Vista();
-    
+
     public void separarPolinomios()
     {
         //Variables que conceden permisos para acceder a la modificacion de listas o de Strings
@@ -61,10 +63,11 @@ public class Modelo
             {
                 monomio +=polinomio.substring(contador,y);    //rellena el string donde ira la lista   
             }
-    
+
             if (lista==false && siguienteNodo==true )
             {
                 cola.insertar(monomio);//Agrega el monomio a la primera lista
+
                 siguienteNodo=false; //agregar el polinomio al nodo seleccionado
             }
 
@@ -72,6 +75,7 @@ public class Modelo
             {
                 siguienteNodo=false; //agregar el polinomio al nodo seleccionado
                 cola2.insertar(monomio);//Agrega el monomio a la segunda lista
+
             }
             if(vaciarMonomio==true && polinomio.substring(contador,y).equals("-") )
             {
@@ -85,6 +89,57 @@ public class Modelo
             }
             contador++; // permite llevar el control de los elementos que se agregaran al monomio
         }       
-    }     
+    } 
+
+    public void leer()
+    {
+        FileReader archivo;
+        BufferedReader lector; 
+
+        try
+        {
+            archivo = new FileReader("C:\\Users\\jamej\\Desktop\\Tarea-Programada-2\\Archivos.txt");
+            if (archivo.ready())
+            {
+                lector = new BufferedReader(archivo);
+                String polinomio; //Para Cuando se implemente a la funcion de polinomio
+                while((polinomio = lector.readLine())!= null)
+                {
+                    System.out.println(polinomio);
+                }
+            }
+            else
+            {
+                System.out.println("El archivo aun no esta listo ");
+            }
+        }
+        catch(Exception e)
+        {
+            System.out.print("error" + e.getMessage());
+        }
+
+    }
+    
+    public void escribir()throws IOException
+    {
+        FileWriter archivo = null; 
+        PrintWriter escritor = null;
+        
+        try
+        {
+            archivo = new FileWriter("C:\\Users\\jamej\\Desktop\\Tarea-Programada-2\\Archivos.txt");
+            escritor = new PrintWriter(archivo);
+            
+            escritor.print("Prueba escritura");
+        }
+        catch(Exception e)
+        {
+            System.out.print("error"+ e.getMessage());
+        }
+        finally
+        {
+            archivo.close();
+        }
+    }
 }
 

@@ -2,4 +2,8 @@
 comment0.target=Modelo
 comment1.params=
 comment1.target=void\ separarPolinomios()
-numComments=2
+comment2.params=
+comment2.target=void\ leer()
+comment3.params=
+comment3.target=void\ escribir()
+numComments=4

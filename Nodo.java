@@ -13,9 +13,10 @@ public class Nodo
     public Nodo(String valor)
     {
         this.valor=valor;
-        siguiente=null;
-        
-        System.out.print(valor);
+        siguiente=null;        
     }
-
+    
+    public String getValor(){
+    return this.valor;
+    }
 }

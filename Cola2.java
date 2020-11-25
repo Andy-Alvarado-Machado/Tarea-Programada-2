@@ -8,7 +8,7 @@
 import javax.swing.JOptionPane;
 public class Cola2
 {
-       private Nodo inicioCola,ultimoCola;
+    private Nodo inicioCola,ultimoCola;
     String Cola="";
     //Se crea el constrcutor de la clase Cola
     public Cola2()
