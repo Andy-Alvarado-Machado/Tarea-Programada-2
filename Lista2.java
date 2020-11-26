@@ -2,13 +2,13 @@ public class Lista2
 {
     private Nodo inicio;
     private Nodo fin;
-   
+
     public Lista2()
     {
         inicio= null;
         fin=null;
     }
-    
+
     public boolean listVacia()
     {
         if (inicio==null)
@@ -20,7 +20,7 @@ public class Lista2
             return false;
         }
     }
-    
+
     public void insertar(Polinomio dato)
     {
         Nodo actual;
@@ -37,7 +37,7 @@ public class Lista2
             fin=actual;
         }
     }
-    
+
     public void mostrar()
     {
         if(listVacia())

@@ -1,0 +1,79 @@
+[33mcommit 4c6e6d5b27efabb69aff1ae3b4b65156cc8d543a[m[33m ([m[1;36mHEAD -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m)[m
+Author: Andy <alvaradomachado04@gmail.com>
+Date:   Tue Nov 24 20:10:23 2020 -0600
+
+    Modificación en escritor y lector
+
+[33mcommit 7954a7c584d5a6d8c793953c73c15aba48e6d56b[m
+Author: JamesLezcano <james.jar2@gmail.com>
+Date:   Tue Nov 24 17:31:42 2020 -0600
+
+    "Solucion al problema commit"
+
+[33mcommit ef17b390534b9a226252e225b168ae4820f1054b[m
+Merge: 52264c9 56cbad8
+Author: Andy <alvaradomachado04@gmail.com>
+Date:   Mon Nov 23 19:51:53 2020 -0600
+
+    Cambios en las listas
+
+[33mcommit 52264c99514c6d2194ec4337de6edca8f5d8289a[m
+Author: Andy <alvaradomachado04@gmail.com>
+Date:   Sun Nov 22 22:25:26 2020 -0600
+
+    Cambio en package
+
+[33mcommit 56cbad8ee6428ece7765c202b19fc14f11b51dbf[m
+Author: JamesLezcano <james.jar2@gmail.com>
+Date:   Sun Nov 22 11:37:56 2020 -0600
+
+    "escritor y lector para adjuntar"
+
+[33mcommit 7d9747ba85c8f7da62c0b51fb1b9546795e0d26e[m
+Author: JamesLezcano <james.jar2@gmail.com>
+Date:   Sat Nov 21 23:52:47 2020 -0600
+
+    " Agregar todos los elementos del String "
+
+[33mcommit 17a33ffa3ee2760ea8a2262ca07cbd5dbde52209[m
+Author: JamesLezcano <james.jar2@gmail.com>
+Date:   Sat Nov 21 22:58:20 2020 -0600
+
+    "Modificacion numero 3 "
+
+[33mcommit ec4834807b5fe6331421e1bf31e3bccf812ca874[m
+Author: Andy <alvaradomachado04@gmail.com>
+Date:   Fri Nov 20 21:55:24 2020 -0600
+
+    Implementación de clase modelo, vitsa, cola 1 y 2
+
+[33mcommit 688929c92bf5c2907513861877c676e1ab61dc84[m
+Merge: 3ef9251 7675ee9
+Author: Andy <alvaradomachado04@gmail.com>
+Date:   Thu Nov 19 20:54:57 2020 -0600
+
+    Base del código-Andy
+
+[33mcommit 7675ee9e4f4ed8b0abf7cb06042d3a38480fad78[m
+Author: James <James.jar2@gmail.com>
+Date:   Thu Nov 19 20:10:10 2020 -0600
+
+    dividir String
+
+[33mcommit 3ef925149805828ef53d3057db2c2af3fe02767e[m
+Author: Andy <alvaradomachado04@gmail.com>
+Date:   Thu Nov 19 19:32:02 2020 -0600
+
+    Base del programa
+
+[33mcommit 5b4d96184ef819ea260fa6d2b74074c1f845ae05[m
+Author: James <James.jar2@gmail.com>
+Date:   Tue Nov 3 20:31:16 2020 -0600
+
+    prueva 1
+
+[33mcommit 663d4d1662528d46201893c57a92fb426e5495fd[m[33m ([m[1;31morigin/test[m[33m)[m
+Author: Andy <alvaradomachado04@gmail.com>
+Date:   Tue Nov 3 18:31:51 2020 -0600
+
+    Primer commit

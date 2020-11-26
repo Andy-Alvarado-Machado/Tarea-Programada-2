@@ -9,7 +9,7 @@ public class Polinomio
 {
     private String base, variable, exponente;
    
-    public Polinomio(String base, String variable, String exponente)
+    Polinomio(String base, String variable, String exponente)
     {
         this.base=base;
         this.variable=variable;

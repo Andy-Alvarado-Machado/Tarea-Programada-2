@@ -16,20 +16,21 @@ import java.io.FileReader;
 import java.io.BufferedReader;
 public class Modelo
 { 
+    String polinomio;
     public void escribir()throws IOException
     {
         Vista vista = new Vista();
-        
+        Lista lista = new Lista();
+        Lista2 lista2 = new Lista2();
         FileWriter archivo = null;
         PrintWriter escritor = null;
         
         try
         {
-            
             archivo = new FileWriter("C:\\Users\\jamej\\Desktop\\Tarea-Programada-2\\"+vista.nombreArchivo()+".txt");
             escritor = new PrintWriter(archivo);
             escritor.print("Prueba escritura");
-            
+
         }
         catch(Exception e)
         {
@@ -40,22 +41,22 @@ public class Modelo
             archivo.close();
         }
     }
-    
-    public static void LeerOperaciones()
-    {
-        FileReader archivo;
+
+    public  void LeerOperaciones()
+    {      FileReader archivo;
         BufferedReader lector;
-        
+
         try
         {
-            archivo = new FileReader("C:\\Users\\jamej\\Desktop\\Tarea-Programada-2\\Archivos.txt");
+            archivo = new FileReader("D:\\UCR\\II Semestre\\Programación I\\Tarea Programada 2");
             if (archivo.ready())
             {
                 lector = new BufferedReader(archivo);
-                String polinomio; //Para Cuando se implemente a la funcion de polinomio
-                while((polinomio = lector.readLine())!= null)
+                String archivoP; //Para Cuando se implemente a la funcion de polinomio
+                while((archivoP = lector.readLine())!= null)
                 {
-                    System.out.println(polinomio);
+                    System.out.println(archivoP);
+                    polinomio=archivoP;
                 }
             }
             else
@@ -67,16 +68,18 @@ public class Modelo
         {
             System.out.print("error" + e.getMessage());
         }
-        
+
     }
-    /**
+
     Vista vista = new Vista();
-    
+
     public void separarPolinomios()
     {
+        System.out.println(polinomio);
+        /*
         //Variables que conceden permisos para acceder a la modificacion de listas o de Strings
         //**************************************************************************
-        String polinomio=vista.pedirPolinomio();
+         polinomio="5x+3x+2x";
         int contador=0; //registra los caracteres en el sub string
 
         boolean vaciarMonomio=false;//nodo en el que se estara agregado el string
@@ -117,18 +120,17 @@ public class Modelo
             {
                 monomio +=polinomio.substring(contador,y);    //rellena el string donde ira la lista   
             }
-            
-            
+
             if (lista==false && siguienteNodo==true )
             {
-                cola.agregarValor(monomio);//Agrega el monomio a la primera lista
+               //Agrega el monomio a la primera lista  
                 siguienteNodo=false; //agregar el polinomio al nodo seleccionado
             }
 
             if (lista=true && siguienteNodo==true || y==polinomio.length())
             {
                 siguienteNodo=false; //agregar el polinomio al nodo seleccionado
-                cola2.agregarValor(monomio);//Agrega el monomio a la segunda lista
+                //Agrega el monomio a la segunda lista
             }
             if(vaciarMonomio==true && polinomio.substring(contador,y).equals("-") )
             {
@@ -141,7 +143,7 @@ public class Modelo
                 monomio=""; //vacia el string para volver a ser llenado en el siguiente nodo
             }
             contador++; // permite llevar el control de los elementos que se agregaran al monomio
-        }      */ 
-      
+        }      
+*/
+    }
 }
-

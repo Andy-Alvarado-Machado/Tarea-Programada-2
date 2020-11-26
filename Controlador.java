@@ -11,6 +11,7 @@ public class Controlador
     Modelo modelo=new Modelo();
     public void ejecutar()
     {
+        /*
         int opcion=vista.menuOpciones(); 
         
         do
@@ -37,5 +38,9 @@ public class Controlador
             }
         }while(opcion!=3);
     }
+    */
+   
+   modelo.LeerOperaciones();
+   
 }
-
+}
