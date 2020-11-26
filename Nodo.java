@@ -7,16 +7,32 @@
  */
 public class Nodo
 {
-    String valor;
-    Nodo siguiente;
-    //Se crea el constrcutor de la clase Nodo
-    public Nodo(String valor)
+    private Nodo siguiente;
+    private Polinomio dato;
+    
+    public Nodo(Polinomio dato, Nodo siguiente)
     {
-        this.valor=valor;
-        siguiente=null;        
+        this.siguiente = siguiente;
+        this.dato = dato;
     }
     
-    public String getValor(){
-    return this.valor;
+    public Nodo getSiguiente()
+    {
+        return siguiente;
+    }
+    
+    public void setSiguiente(Nodo siguiente)
+    {
+        this.siguiente = siguiente;
+    }
+    
+    public Polinomio getDato()
+    {
+        return dato;
+    }
+    
+    public void getDato(Polinomio dato)
+    {
+        this.dato = dato;
     }
 }

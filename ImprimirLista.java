@@ -1,11 +1,11 @@
 
 /**
- * Write a description of class Modelo here.
+ * Write a description of class ImprimirLista here.
  * 
  * @author (your name) 
  * @version (a version number or a date)
  */
-import javax.swing.JOptionPane; 
+import javax.swing.JOptionPane;
 //Metodo de Excepciones
 import java.io.*;
 //Metodos de escritura
@@ -14,41 +14,16 @@ import java.io.PrintWriter;
 //Metodos de lectura los datos
 import java.io.FileReader;
 import java.io.BufferedReader;
-public class Modelo
-{ 
-    public void escribir()throws IOException
-    {
-        Vista vista = new Vista();
-        
-        FileWriter archivo = null;
-        PrintWriter escritor = null;
-        
-        try
-        {
-            
-            archivo = new FileWriter("C:\\Users\\jamej\\Desktop\\Tarea-Programada-2\\"+vista.nombreArchivo()+".txt");
-            escritor = new PrintWriter(archivo);
-            escritor.print("Prueba escritura");
-            
-        }
-        catch(Exception e)
-        {
-            throw e;
-        }
-        finally
-        {
-            archivo.close();
-        }
-    }
-    
-    public static void LeerOperaciones()
+public class ImprimirLista
+{
+   /** public static void LeerOperaciones()
     {
         FileReader archivo;
         BufferedReader lector;
         
         try
         {
-            archivo = new FileReader("C:\\Users\\jamej\\Desktop\\Tarea-Programada-2\\Archivos.txt");
+            archivo = new FileReader("C:\\Users\\jamej\\Desktop\\Tarea-Programada-2 - copia\\Archivos.txt");
             if (archivo.ready())
             {
                 lector = new BufferedReader(archivo);
@@ -69,14 +44,12 @@ public class Modelo
         }
         
     }
-    /**
-    Vista vista = new Vista();
-    
+   
     public void separarPolinomios()
     {
         //Variables que conceden permisos para acceder a la modificacion de listas o de Strings
         //**************************************************************************
-        String polinomio=vista.pedirPolinomio();
+        String polinomio="1X^2+2X^4-5X^1*4X^3";
         int contador=0; //registra los caracteres en el sub string
 
         boolean vaciarMonomio=false;//nodo en el que se estara agregado el string
@@ -121,6 +94,9 @@ public class Modelo
             
             if (lista==false && siguienteNodo==true )
             {
+                monomio.split("X");
+                //agregue lo que esta antes en base una X en variable y lo que sigue en expnente
+                
                 cola.agregarValor(monomio);//Agrega el monomio a la primera lista
                 siguienteNodo=false; //agregar el polinomio al nodo seleccionado
             }
@@ -141,7 +117,25 @@ public class Modelo
                 monomio=""; //vacia el string para volver a ser llenado en el siguiente nodo
             }
             contador++; // permite llevar el control de los elementos que se agregaran al monomio
-        }      */ 
-      
+        }     
+    */
+    
+    
+    
+    
+     public static void main(String args[]) 
+    {
+        Lista polinomio1=new Lista();
+        Lista2 polinomio2=new Lista2();
+        String base , variable , exponente; 
+        //4x^2+3x 
+        base= "4";
+        variable ="X";
+        exponente ="2";
+        
+        polinomio1.insertar(new Polinomio(base,variable,exponente));
+        polinomio1.mostrar();
+        polinomio2.insertar(new Polinomio(base,variable,exponente));
+        polinomio2.mostrar();
+    }
 }
-

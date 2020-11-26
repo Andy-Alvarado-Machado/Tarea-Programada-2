@@ -7,12 +7,35 @@
  */
 public class Controlador
 {
-    Modelo modelo = new Modelo();
-    Cola cola= new Cola();
-    Cola2 cola2= new Cola2();
-    public void ejecutar(){
-        modelo.separarPolinomios();
-        cola.mostrar();
-        cola2.mostrar();
+    Vista vista=new Vista();
+    Modelo modelo=new Modelo();
+    public void ejecutar()
+    {
+        int opcion=vista.menuOpciones(); 
+        
+        do
+        {
+            switch(opcion)
+            {
+                case 1:
+                    try{
+                        modelo.escribir();
+                        break;
+                    }catch(Exception e)
+                    {
+                        System.out.print(e.getMessage());
+                    }
+                case 2:
+                    modelo.LeerOperaciones();
+                    break;
+                
+                case 3:
+                
+                default:
+                    System.out.print("Ingreso un dato incorrecto\n");
+            
+            }
+        }while(opcion!=3);
     }
 }
+
