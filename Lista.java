@@ -28,7 +28,7 @@ public class Lista
         }
     }
     
-    public void insertar(Polinomio dato)
+    public void insertar(Monomio dato)
     {
         Nodo actual;
         if (listVacia( ))
@@ -39,7 +39,7 @@ public class Lista
         }
         else
         {
-            actual=new Nodo(dato, null);
+            actual=new Nodo(dato, null); 
             fin.setSiguiente(actual);
             fin=actual;
         }

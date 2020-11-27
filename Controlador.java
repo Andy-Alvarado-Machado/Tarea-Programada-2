@@ -40,7 +40,7 @@ public class Controlador
     }
     */
    
-   modelo.LeerOperaciones();
+   modelo.separarPolinomios();
    
 }
 }

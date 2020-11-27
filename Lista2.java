@@ -21,12 +21,12 @@ public class Lista2
         }
     }
 
-    public void insertar(Polinomio dato)
+    public void insertar(Monomio dato)
     {
         Nodo actual;
         if (listVacia( ))
         {
-            actual= new Nodo(dato,null);
+            actual= new Nodo(dato,null); 
             inicio=actual;
             fin=actual;
         }

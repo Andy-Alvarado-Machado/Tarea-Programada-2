@@ -8,9 +8,9 @@
 public class Nodo
 {
     private Nodo siguiente;
-    private Polinomio dato;
+    private Monomio dato;
     
-    public Nodo(Polinomio dato, Nodo siguiente)
+    public Nodo(Monomio dato, Nodo siguiente)
     {
         this.siguiente = siguiente;
         this.dato = dato;
@@ -26,12 +26,12 @@ public class Nodo
         this.siguiente = siguiente;
     }
     
-    public Polinomio getDato()
+    public Monomio getDato()
     {
         return dato;
     }
     
-    public void getDato(Polinomio dato)
+    public void getDato(Monomio dato)
     {
         this.dato = dato;
     }

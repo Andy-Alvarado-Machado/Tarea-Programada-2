@@ -55,9 +55,9 @@ public class ImprimirLista
         variable ="X";
         exponente ="2";
 
-        polinomio1.insertar(new Polinomio(base,variable,exponente));
+        polinomio1.insertar(new Monomio(base,variable,exponente));
         polinomio1.mostrar();
-        polinomio2.insertar(new Polinomio(base,variable,exponente));
+        polinomio2.insertar(new Monomio(base,variable,exponente));
         polinomio2.mostrar();
     }
 }

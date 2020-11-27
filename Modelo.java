@@ -48,15 +48,16 @@ public class Modelo
 
         try
         {
-            archivo = new FileReader("D:\\UCR\\II Semestre\\Programación I\\Tarea Programada 2");
+            archivo = new FileReader("C:\\Users\\jamej\\Desktop\\Tarea-Programada-2\\Archivos.txt");
             if (archivo.ready())
             {
                 lector = new BufferedReader(archivo);
                 String archivoP; //Para Cuando se implemente a la funcion de polinomio
                 while((archivoP = lector.readLine())!= null)
                 {
-                    System.out.println(archivoP);
+                    
                     polinomio=archivoP;
+                    //System.out.println(polinomio);
                 }
             }
             else
@@ -73,77 +74,96 @@ public class Modelo
 
     Vista vista = new Vista();
 
-    public void separarPolinomios()
+    public static void separarPolinomios()
     {
-        System.out.println(polinomio);
-        /*
+        Lista lista1=new Lista();
+        
         //Variables que conceden permisos para acceder a la modificacion de listas o de Strings
         //**************************************************************************
-         polinomio="5x+3x+2x";
+        String polinomio="5x+3x+2x|*|5x+3x+2x";
         int contador=0; //registra los caracteres en el sub string
-
-        boolean vaciarMonomio=false;//nodo en el que se estara agregado el string
-
-        String monomio="";//string donde se agregara el nodo
-        boolean lista = false; //indica a que lista se agregaran los string, si está en false es Cola y si está en true es Cola2
-        boolean multiplicacion=false,division=false;
-        boolean siguienteNodo=false; //le concede el permiso al nodo para agregar el string
+        
+        boolean vaciarBase=false;//nodo en el que se estara agregado el string
+        boolean vaciarVariable=false;
+        boolean vaciarExponente=false;
+        
+        String base="";
+        String variable="";
+        String exponente="";
+        
+        boolean lista=true;
+        boolean siguienteNodo=false;
+        
+        boolean baseP=true;
+        boolean variableP=false;
+        boolean exponenteP=false;
         //**************************************************************************
         //Recorrido de Strings
         for(int y=1; y<=polinomio.length(); y++)
-        {
-            if(polinomio.substring(contador,y).equals("+") || polinomio.substring(contador,y).equals("-"))
+        {//"5x+3x+2x|*|5x+3x+2x"
+            if(polinomio.substring(contador,y).equals("X") )
             {   
-                if( polinomio.substring(contador,y).equals("-") && monomio.equals(""))//Evita perder el signo menos
-                {monomio+="-";}
+               variableP=true;//permite agregar la variable
+               baseP=false;//impide el acceso a base
+            }
+            
+            else if(polinomio.substring(contador,y).equals("+") || polinomio.substring(contador,y).equals("-"))
+            {
+                if (polinomio.substring(contador,y).equals("-") && base.equals(""))
+                {
+                    base+="-";
+                }
                 else
                 {
-                    vaciarMonomio=true; //Avanza al siguiente nodo
-                    siguienteNodo=true;//permite acceder al siguiente nodo que se va a agregar
+                    siguienteNodo=true;//permite agregar al siguiente nodo
                 }
             }
-            else if(polinomio.substring(contador,y).equals("/"))
+            
+            else if(polinomio.substring(contador,y).equals("^"))
             {
-                lista=true; //Avanza a la siguiente lista
-                division=true;
-                vaciarMonomio=true; // Vacia el monomio para agregar el proximo
-                siguienteNodo=true; //permite acceder al siguiente nodo que se va a agregar
+                y++;
+                contador++;
+                variableP=false;//permite agregar la variable
+                exponenteP=true;//permite agregar la variable
+            }
+            
+            else if(polinomio.substring(contador,y).equals("|"))
+            {
+                //Falta hacer recorrido
+            }
+            
+            else if(polinomio.substring(contador,y).equals("/")) 
+            {
+                //Falta hacer recorrido
             }
             else if(polinomio.substring(contador,y).equals("*"))
             {
-                lista=true; //Avanza a la siguiente lista
-                multiplicacion=true;
-                vaciarMonomio=true;     // Vacia el monomio para agregar el proximo
-                siguienteNodo=true;     //permite acceder al siguiente nodo que se va a agregar
+                //falta Hacer recorrido
             }
-            else
+            
+            if (baseP==true )//permite agregar a la base
             {
-                monomio +=polinomio.substring(contador,y);    //rellena el string donde ira la lista   
+                base+=polinomio.substring(contador,y);
             }
-
-            if (lista==false && siguienteNodo==true )
+            
+            if (variableP==true )//permite agregar a la variable
             {
-               //Agrega el monomio a la primera lista  
-                siguienteNodo=false; //agregar el polinomio al nodo seleccionado
+                variable+=polinomio.substring(contador,y); 
+                y++;
+                contador++;
             }
-
-            if (lista=true && siguienteNodo==true || y==polinomio.length())
-            {
-                siguienteNodo=false; //agregar el polinomio al nodo seleccionado
-                //Agrega el monomio a la segunda lista
+            
+            if (exponenteP==true )//permite agregar al exponente
+            { 
+                exponente+=polinomio.substring(contador,y);
             }
-            if(vaciarMonomio==true && polinomio.substring(contador,y).equals("-") )
+            
+            if (lista==true && siguienteNodo==true)//Permite agrregar a la lista 1
             {
-                vaciarMonomio=false;
-                monomio="-"; //vacia el string para volver a ser llenado en el siguiente nodo
-            }
-            else if(vaciarMonomio==true )
-            {
-                vaciarMonomio=false;    //evita que se vacie el monomio antes de tiempo
-                monomio=""; //vacia el string para volver a ser llenado en el siguiente nodo
+                lista1.insertar(new Monomio(base, variable, exponente));   
+                lista1.mostrar();
             }
             contador++; // permite llevar el control de los elementos que se agregaran al monomio
-        }      
-*/
+        }   
     }
 }

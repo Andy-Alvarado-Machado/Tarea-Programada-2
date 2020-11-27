@@ -1,1 +1,1 @@
-Prueba escritura
+5X^2+3X^4*3X^1
