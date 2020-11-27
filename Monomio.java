@@ -19,7 +19,7 @@ public class Monomio
     
     public String toString()
     {
-        return "  base: "+getBase()+"  variable: "+getVariable()+"  exponente: "+getExponente();
+        return "+"+getBase()+getVariable()+"^"+getExponente();
     }
     
     public int getBase()
