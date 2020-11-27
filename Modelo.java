@@ -43,7 +43,7 @@ public class Modelo
     }
 
     public  void LeerOperaciones()
-    {      FileReader archivo;
+    {   FileReader archivo;
         BufferedReader lector;
 
         try

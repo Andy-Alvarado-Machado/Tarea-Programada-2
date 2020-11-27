@@ -9,8 +9,17 @@ public class Controlador
 {
     Vista vista=new Vista();
     Modelo modelo=new Modelo();
+    Lista lista = new Lista();
+    Lista2 lista2 = new Lista2();
     public void ejecutar()
     {
+        String operacion;
+        int opcionIngresar=vista.opcionIngresar();
+        if(opcionIngresar==1){
+        operacion=vista.pedirString();
+        lista.mostrar();
+        lista2.mostrar();
+        }
         /*
         int opcion=vista.menuOpciones(); 
         
@@ -40,7 +49,6 @@ public class Controlador
     }
     */
    
-   modelo.separarPolinomios();
    
 }
 }
