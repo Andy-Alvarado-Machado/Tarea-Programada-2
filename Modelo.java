@@ -16,12 +16,13 @@ import java.io.FileReader;
 import java.io.BufferedReader;
 public class Modelo
 { 
+    Lista lista1=new Lista();
+    Lista lista2=new Lista();
     String polinomio;
     public void escribir()throws IOException
     {
-        Vista vista = new Vista();
-        Lista lista = new Lista();
-        Lista2 lista2 = new Lista2();
+        
+        //Lista2 lista2 = new Lista2();
         FileWriter archivo = null;
         PrintWriter escritor = null;
         
@@ -55,9 +56,8 @@ public class Modelo
                 String archivoP; //Para Cuando se implemente a la funcion de polinomio
                 while((archivoP = lector.readLine())!= null)
                 {
-                    
                     polinomio=archivoP;
-                    //System.out.println(polinomio);
+                    separarPolinomios(polinomio);
                 }
             }
             else
@@ -74,22 +74,22 @@ public class Modelo
 
     Vista vista = new Vista();
 
-    public static void separarPolinomios()
+    public void separarPolinomios(String polinomio1) 
     {
-        Lista lista1=new Lista();
         
         //Variables que conceden permisos para acceder a la modificacion de listas o de Strings
         //**************************************************************************
-        String polinomio="5x+3x+2x|*|5x+3x+2x";
+        String polinomio=polinomio1;//"5X^2+3X^4|*|3X^1";
         int contador=0; //registra los caracteres en el sub string
         
         boolean vaciarBase=false;//nodo en el que se estara agregado el string
         boolean vaciarVariable=false;
         boolean vaciarExponente=false;
         
-        String base="";
+        String base1="";
         String variable="";
-        String exponente="";
+        String exponente1="";
+        int base , exponente;
         
         boolean lista=true;
         boolean siguienteNodo=false;
@@ -97,26 +97,28 @@ public class Modelo
         boolean baseP=true;
         boolean variableP=false;
         boolean exponenteP=false;
+        
+        boolean multiplicacion=false;
+        boolean division=false;
         //**************************************************************************
         //Recorrido de Strings
         for(int y=1; y<=polinomio.length(); y++)
         {//"5x+3x+2x|*|5x+3x+2x"
-            if(polinomio.substring(contador,y).equals("X") )
+            if(polinomio.substring(contador,y).equalsIgnoreCase("x") )
             {   
                variableP=true;//permite agregar la variable
                baseP=false;//impide el acceso a base
             }
             
-            else if(polinomio.substring(contador,y).equals("+") || polinomio.substring(contador,y).equals("-"))
+            else if(polinomio.substring(contador,y).equals("+") || polinomio.substring(contador,y).equals("-") )
             {
-                if (polinomio.substring(contador,y).equals("-") && base.equals(""))
-                {
-                    base+="-";
-                }
+                exponenteP=false;
+                if (polinomio.substring(contador,y).equals("-") && base1.equals(""))
+                {}
                 else
                 {
                     siguienteNodo=true;//permite agregar al siguiente nodo
-                }
+                } 
             }
             
             else if(polinomio.substring(contador,y).equals("^"))
@@ -129,41 +131,99 @@ public class Modelo
             
             else if(polinomio.substring(contador,y).equals("|"))
             {
-                //Falta hacer recorrido
+                 exponenteP=false;
             }
             
             else if(polinomio.substring(contador,y).equals("/")) 
             {
+                siguienteNodo=true;//permite agregar al siguiente nodo
+                lista=false;
+                multiplicacion=true;
+                y++;
+                contador++;
+                exponenteP=false;
                 //Falta hacer recorrido
             }
             else if(polinomio.substring(contador,y).equals("*"))
             {
-                //falta Hacer recorrido
+                siguienteNodo=true;//permite agregar al siguiente nodo
+                lista=false;//falta Hacer recorrido
+                division=true;
+                y++;
+                contador++;
+                exponenteP=false;
             }
             
             if (baseP==true )//permite agregar a la base
             {
-                base+=polinomio.substring(contador,y);
+                
+                base1+=polinomio.substring(contador,y);
+            
             }
             
             if (variableP==true )//permite agregar a la variable
             {
                 variable+=polinomio.substring(contador,y); 
-                y++;
-                contador++;
             }
             
             if (exponenteP==true )//permite agregar al exponente
             { 
-                exponente+=polinomio.substring(contador,y);
+                exponente1+=polinomio.substring(contador,y);
             }
             
             if (lista==true && siguienteNodo==true)//Permite agrregar a la lista 1
             {
-                lista1.insertar(new Monomio(base, variable, exponente));   
-                lista1.mostrar();
+                base= Integer.parseInt(base1);
+                exponente=Integer.parseInt(exponente1);
+                lista1.insertar(new Monomio(base, variable, exponente));  
+                siguienteNodo=false;
+                exponenteP=false;
+                baseP=true;
+                if (polinomio.substring(contador,y).equals("-"))
+                {
+                    base1="-";
+                    variable="";
+                    exponente1="";
+                }
+                else
+                {
+                    base1="";
+                    variable="";
+                    exponente1="";
+                }
+            }
+            if (lista==false && siguienteNodo==true || y==polinomio.length())//Permite agrregar a la lista 1
+            {
+                base= Integer.parseInt(base1);
+                exponente=Integer.parseInt(exponente1);
+                lista2.insertar(new Monomio(base, variable, exponente));  
+                siguienteNodo=false;
+                exponenteP=false;
+                baseP=true;
+                if (polinomio.substring(contador,y).equals("-"))
+                {
+                    base1="-";
+                    variable="";
+                    exponente1="";
+                }
+                else
+                {
+                    base1="";
+                    variable="";
+                    exponente1="";
+                }
             }
             contador++; // permite llevar el control de los elementos que se agregaran al monomio
-        }   
+        } 
     }
+    
+    public Lista obtenerLista1()
+    {
+        return lista1;
+    }
+    public Lista obtenerLista2()
+    {
+        return lista2;
+    }
+    
 }

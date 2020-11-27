@@ -58,7 +58,7 @@ public class Lista
             temporal=inicio;
             while(temporal!=null)
             {
-                System.out.print(temporal.getDato().toString());
+                System.out.println(temporal.getDato().toString());
                 temporal=temporal.getSiguiente();
             }
         }

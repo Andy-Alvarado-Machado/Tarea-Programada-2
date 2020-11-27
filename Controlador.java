@@ -9,8 +9,11 @@ public class Controlador
 {
     Vista vista=new Vista();
     Modelo modelo=new Modelo();
+    
     public void ejecutar()
     {
+        Lista lista1;
+        Lista lista2;
         /*
         int opcion=vista.menuOpciones(); 
         
@@ -39,8 +42,11 @@ public class Controlador
         }while(opcion!=3);
     }
     */
-   
-   modelo.separarPolinomios();
-   
+        modelo.LeerOperaciones();
+        lista1=modelo.obtenerLista1();
+        lista2=modelo.obtenerLista2();
+        lista1.mostrar();
+        lista2.mostrar();
+
 }
 }
