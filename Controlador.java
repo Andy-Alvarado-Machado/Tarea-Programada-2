@@ -9,17 +9,11 @@ public class Controlador
 {
     Vista vista=new Vista();
     Modelo modelo=new Modelo();
-    Lista lista = new Lista();
-    Lista2 lista2 = new Lista2();
+    
     public void ejecutar()
     {
-        String operacion;
-        int opcionIngresar=vista.opcionIngresar();
-        if(opcionIngresar==1){
-        operacion=vista.pedirString();
-        lista.mostrar();
-        lista2.mostrar();
-        }
+        Lista lista1;
+        Lista lista2;
         /*
         int opcion=vista.menuOpciones(); 
         
@@ -48,7 +42,11 @@ public class Controlador
         }while(opcion!=3);
     }
     */
-   
-   
+        modelo.LeerOperaciones();
+        lista1=modelo.obtenerLista1();
+        lista2=modelo.obtenerLista2();
+        lista1.mostrar();
+        lista2.mostrar();
+
 }
 }

@@ -7,9 +7,10 @@
  */
 public class Monomio
 {
-    private String base, variable, exponente;
+    private String variable;
+    private int base ,exponente;
    
-    Monomio(String base, String variable, String exponente)
+    Monomio(int base, String variable, int exponente)
     {
         this.base=base;
         this.variable=variable;
@@ -18,15 +19,15 @@ public class Monomio
     
     public String toString()
     {
-        return "  base"+getBase()+"  variable"+getVariable()+"  exponente"+getExponente();
+        return "  base: "+getBase()+"  variable: "+getVariable()+"  exponente: "+getExponente();
     }
     
-    public String getBase()
+    public int getBase()
     {
         return base;
     }
     
-    public void setBase(String base)
+    public void setBase(int base)
     {
         this.base=base;
     }
@@ -41,12 +42,12 @@ public class Monomio
         this.variable=variable;
     }
     
-    public String getExponente()
+    public int getExponente()
     {
         return exponente;
     }
     
-    public void setExponente(String exponente)
+    public void setExponente(int exponente)
     {
         this.exponente=exponente;
     }
