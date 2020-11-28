@@ -19,7 +19,6 @@ public class Modelo
     Lista lista1=new Lista();
     Lista lista2=new Lista();
     String polinomio;
-    String operacion="";
     /*
     public void escribir()throws IOException
     {
@@ -132,47 +131,27 @@ public class Modelo
             
             else if(polinomio.substring(contador,y).equals("|"))
             {
-                exponenteP=false;
-                if (polinomio.substring(contador+1,y+1).equals("+"))
-                {
-                    siguienteNodo=true;//permite agregar al siguiente nodo
-                    lista=false;
-                    y=y+2;
-                    contador=contador+2;
-                    exponenteP=false;
-                    operacion="+"; 
-                }
-                else if (polinomio.substring(contador+1,y+1).equals("-"))
-                {
-                    siguienteNodo=true;//permite agregar al siguiente nodo
-                    lista=false;
-                    y=y+2;
-                    contador=contador+2;
-                    exponenteP=false;
-                    operacion="-"; 
-                }
-                 
+                 exponenteP=false;
             }
             
             else if(polinomio.substring(contador,y).equals("/")) 
             {
                 siguienteNodo=true;//permite agregar al siguiente nodo
                 lista=false;
+                multiplicacion=true;
                 y++;
                 contador++;
                 exponenteP=false;
-                operacion="/"; 
                 //Falta hacer recorrido
             }
             else if(polinomio.substring(contador,y).equals("*"))
             {
                 siguienteNodo=true;//permite agregar al siguiente nodo
                 lista=false;//falta Hacer recorrido
+                division=true;
                 y++;
                 contador++;
                 exponenteP=false;
-                operacion="*"; 
-                
             }
             
             if (baseP==true )//permite agregar a la base
@@ -217,7 +196,7 @@ public class Modelo
             {
                 base= Integer.parseInt(base1);
                 exponente=Integer.parseInt(exponente1);
-                lista2.insertar(new Monomio(base, variable, exponente));  
+                 
                 siguienteNodo=false;
                 exponenteP=false;
                 baseP=true;
@@ -238,14 +217,14 @@ public class Modelo
         } 
     }
     
-    public void obtenerDatosLista1(int base, String variable, int exponente)
-    {
-        lista1.insertar(new Monomio(base, variable, exponente)); 
+    public void obtenerDatosLista1(int base, String variable, int exponente){
+    lista1.insertar(new Monomio(base, variable, exponente)); 
+    lista1.mostrar();
     }
     
-    public void obtenerDatosLista2(int base, String variable, int exponente)
-    {
-        lista2.insertar(new Monomio(base, variable, exponente));  
+    public void obtenerDatosLista2(int base, String variable, int exponente){
+    lista2.insertar(new Monomio(base, variable, exponente)); 
+     lista2.mostrar();
     }
     
     public Lista obtenerLista1()

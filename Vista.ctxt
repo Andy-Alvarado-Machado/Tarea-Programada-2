@@ -5,5 +5,12 @@ comment1.target=java.lang.String\ nombreArchivo()
 comment2.params=
 comment2.target=int\ pedirOpcion()
 comment3.params=
-comment3.target=java.lang.String\ pedirString()
-numComments=4
+comment3.target=int\ base()
+comment3.text=\r\n\ \ \ \ public\ String\ pedirString(){\r\n\ \ \ \ int\ respuesta\=0,respuesta2\=0;\r\n\ \ \ \ String\ operacion\="",\ variable;\r\n\ \ \ \ int\ base,exponente;\r\n\ \ \ \ do{\r\n\ \ \ \ base\=Integer.parseInt(JOptionPane.showInputDialog("Digite\ la\ base"));\r\n\ \ \ \ variable\=JOptionPane.showInputDialog("Digite\ la\ variable");\r\n\ \ \ \ exponente\=Integer.parseInt(JOptionPane.showInputDialog("Digite\ el\ exponente"));\r\n\ \ \ \ modelo.obtenerDatosLista1(base,variable,exponente);\r\n\ \ \ \ respuesta\=Integer.parseInt(JOptionPane.showInputDialog("\u00BFDesea\ agregar\ otro\ monomio?\:\\n1-S\u00ED\\n2-No"));\ \r\n\ \ \ \ }while(respuesta\=\=1);\r\n\ \ \ \ operacion\=JOptionPane.showInputDialog("Digite\ la\ operacion");\r\n\ \ \ \ do{\r\n\ \ \ \ base\=Integer.parseInt(JOptionPane.showInputDialog("Digite\ la\ base"));\r\n\ \ \ \ variable\=JOptionPane.showInputDialog("Digite\ la\ variable");\r\n\ \ \ \ exponente\=Integer.parseInt(JOptionPane.showInputDialog("Digite\ el\ exponente"));\r\n\ \ \ \ modelo.obtenerDatosLista2(base,variable,exponente);\ \r\n\ \ \ \ respuesta2\=Integer.parseInt(JOptionPane.showInputDialog("\u00BFDesea\ agregar\ otro\ monomio?\:\\n1-S\u00ED\\n2-No"));\r\n\ \ \ \ }while(respuesta2\=\=1);\r\n\ \ \ \ return\ operacion;\r\n}
+comment4.params=
+comment4.target=java.lang.String\ variable()
+comment5.params=
+comment5.target=int\ exponente()
+comment6.params=
+comment6.target=java.lang.String\ operacion()
+numComments=7
