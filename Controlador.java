@@ -18,18 +18,20 @@ public class Controlador
         int opcion=vista.pedirOpcion();
         if(opcion==1)
         {
-        operacion=vista.pedirString();
-        lista1=modelo.obtenerLista1();
-        lista2=modelo.obtenerLista2();
-        lista1.mostrar();
-        System.out.print(operacion);
-        lista2.mostrar();
-        }else if(opcion==2){
-        modelo.LeerOperaciones();
-        lista1=modelo.obtenerLista1();
-        lista2=modelo.obtenerLista2();
-        lista1.mostrar();
-        lista2.mostrar();
+            operacion=vista.pedirString();
+            lista1=modelo.obtenerLista1();
+            lista2=modelo.obtenerLista2();
+            lista1.mostrar();
+            System.out.print(operacion);
+            lista2.mostrar();
+        }
+        else if(opcion==2)
+        {
+            modelo.LeerOperaciones();
+            lista1=modelo.obtenerLista1();
+            lista2=modelo.obtenerLista2();
+            lista1.mostrar();
+            lista2.mostrar();
         }
         
         
