@@ -9,4 +9,6 @@ comment3.params=dato
 comment3.target=void\ insertar(Monomio)
 comment4.params=
 comment4.target=void\ mostrar()
-numComments=5
+comment5.params=
+comment5.target=Nodo\ getInicio()
+numComments=6

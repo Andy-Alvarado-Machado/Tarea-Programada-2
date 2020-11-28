@@ -19,6 +19,7 @@ public class Modelo
     Lista lista1=new Lista();
     Lista lista2=new Lista();
     String polinomio;
+    /*
     public void escribir()throws IOException
     {
         
@@ -28,7 +29,7 @@ public class Modelo
         
         try
         {
-            archivo = new FileWriter("C:\\Users\\jamej\\Desktop\\Tarea-Programada-2\\"+vista.nombreArchivo()+".txt");
+           // archivo = new FileWriter("C:\\Users\\jamej\\Desktop\\Tarea-Programada-2\\"+vista.nombreArchivo()+".txt");
             escritor = new PrintWriter(archivo);
             escritor.print("Prueba escritura");
 
@@ -42,7 +43,7 @@ public class Modelo
             archivo.close();
         }
     }
-
+*/
     public  void LeerOperaciones()
     {      FileReader archivo;
         BufferedReader lector;
@@ -72,7 +73,6 @@ public class Modelo
 
     }
 
-    Vista vista = new Vista();
 
     public void separarPolinomios(String polinomio1) 
     {
@@ -196,7 +196,7 @@ public class Modelo
             {
                 base= Integer.parseInt(base1);
                 exponente=Integer.parseInt(exponente1);
-                lista2.insertar(new Monomio(base, variable, exponente));  
+                 
                 siguienteNodo=false;
                 exponenteP=false;
                 baseP=true;
@@ -217,13 +217,24 @@ public class Modelo
         } 
     }
     
+    public void obtenerDatosLista1(int base, String variable, int exponente){
+    lista1.insertar(new Monomio(base, variable, exponente)); 
+    lista1.mostrar();
+    }
+    
+    public void obtenerDatosLista2(int base, String variable, int exponente){
+    lista2.insertar(new Monomio(base, variable, exponente)); 
+    }
+    
     public Lista obtenerLista1()
     {
         return lista1;
-    }
+    } 
+    
     public Lista obtenerLista2()
     {
         return lista2;
     }
+
     
 }

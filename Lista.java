@@ -7,8 +7,8 @@
  */
 public class Lista
 {
-    private Nodo inicio;
-    private Nodo fin;
+     Nodo inicio;
+     Nodo fin;
    
     public Lista()
     {
@@ -62,6 +62,13 @@ public class Lista
                 temporal=temporal.getSiguiente();
             }
         }
+    }
+    
+    
+    
+    
+    public Nodo getInicio(){
+    return this.inicio;
     }
 }
 

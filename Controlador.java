@@ -12,17 +12,17 @@ public class Controlador
 
     public void ejecutar()
     {
-        
         Lista lista1;
         Lista lista2;
-        
+        String operacion;
         int opcion=vista.pedirOpcion();
         if(opcion==1)
         {
-        vista.pedirString();
-        lista1=vista.obtenerLista1();
-        lista2=vista.obtenerLista2();
-        lista1.mostrar(); 
+        operacion=vista.pedirString();
+        lista1=modelo.obtenerLista1();
+        lista2=modelo.obtenerLista2();
+        lista1.mostrar();
+        System.out.print(operacion);
         lista2.mostrar();
         }else if(opcion==2){
         modelo.LeerOperaciones();

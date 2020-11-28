@@ -1,13 +1,16 @@
 #BlueJ class context
 comment0.target=Modelo
 comment1.params=
-comment1.target=void\ escribir()
-comment2.params=
-comment2.target=void\ LeerOperaciones()
-comment3.params=polinomio1
-comment3.target=void\ separarPolinomios(java.lang.String)
-comment4.params=
-comment4.target=Lista\ obtenerLista1()
+comment1.target=void\ LeerOperaciones()
+comment1.text=\r\n\ \ \ \ public\ void\ escribir()throws\ IOException\r\n\ \ \ \ {\r\n\ \ \ \ \ \ \ \ \r\n\ \ \ \ \ \ \ \ //Lista2\ lista2\ \=\ new\ Lista2();\r\n\ \ \ \ \ \ \ \ FileWriter\ archivo\ \=\ null;\r\n\ \ \ \ \ \ \ \ PrintWriter\ escritor\ \=\ null;\r\n\ \ \ \ \ \ \ \ \r\n\ \ \ \ \ \ \ \ try\r\n\ \ \ \ \ \ \ \ {\r\n\ \ \ \ \ \ \ \ \ \ \ //\ archivo\ \=\ new\ FileWriter("C\:\\\\Users\\\\jamej\\\\Desktop\\\\Tarea-Programada-2\\\\"+vista.nombreArchivo()+".txt");\r\n\ \ \ \ \ \ \ \ \ \ \ \ escritor\ \=\ new\ PrintWriter(archivo);\r\n\ \ \ \ \ \ \ \ \ \ \ \ escritor.print("Prueba\ escritura");\r\n\r\n\ \ \ \ \ \ \ \ }\r\n\ \ \ \ \ \ \ \ catch(Exception\ e)\r\n\ \ \ \ \ \ \ \ {\r\n\ \ \ \ \ \ \ \ \ \ \ \ throw\ e;\r\n\ \ \ \ \ \ \ \ }\r\n\ \ \ \ \ \ \ \ finally\r\n\ \ \ \ \ \ \ \ {\r\n\ \ \ \ \ \ \ \ \ \ \ \ archivo.close();\r\n\ \ \ \ \ \ \ \ }\r\n\ \ \ \ }\r\n
+comment2.params=polinomio1
+comment2.target=void\ separarPolinomios(java.lang.String)
+comment3.params=base\ variable\ exponente
+comment3.target=void\ obtenerDatosLista1(int,\ java.lang.String,\ int)
+comment4.params=base\ variable\ exponente
+comment4.target=void\ obtenerDatosLista2(int,\ java.lang.String,\ int)
 comment5.params=
-comment5.target=Lista\ obtenerLista2()
-numComments=6
+comment5.target=Lista\ obtenerLista1()
+comment6.params=
+comment6.target=Lista\ obtenerLista2()
+numComments=7
