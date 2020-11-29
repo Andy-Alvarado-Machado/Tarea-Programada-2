@@ -7,6 +7,7 @@
  */
 public class Lista
 {
+    
      Nodo inicio;
      Nodo fin;
    
@@ -66,13 +67,39 @@ public class Lista
     
     public int obtenerTamannio(){
         int contador=0;
-        while (inicio!=null)
+        Nodo temporal;
+        temporal=inicio;
+        while (temporal!=null)
         {
             contador++;
-            inicio= inicio.getSiguiente();
+            temporal= temporal.getSiguiente();
         }
         
         return contador;
+    }
+    
+    public Monomio[] getData(){
+        
+        int contador=0;
+        
+        Monomio[] vectorMonomios=new Monomio[obtenerTamannio()];
+        Nodo temp=inicio;
+        
+        while (temp!=null)
+        {
+            vectorMonomios[contador]=temp.getDato();
+            contador++;
+            temp= temp.getSiguiente();
+        }
+        
+        return vectorMonomios;
+    }
+    
+    
+    public void limpiar(){
+        
+     inicio=null;
+     fin=null;
     }
     
     

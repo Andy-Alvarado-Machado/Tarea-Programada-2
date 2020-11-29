@@ -18,6 +18,7 @@ public class Modelo
 { 
     Lista lista1=new Lista();
     Lista lista2=new Lista();
+    Lista lista3=new Lista();
     String polinomio;
     String operacion="";
     /*
@@ -44,9 +45,10 @@ public class Modelo
             archivo.close();
         }
     }
-*/
+    */
     public  void LeerOperaciones()
-    {      FileReader archivo;
+    {      
+        FileReader archivo;
         BufferedReader lector;
 
         try
@@ -77,7 +79,6 @@ public class Modelo
 
     public void separarPolinomios(String polinomio1) 
     {
-        
         //Variables que conceden permisos para acceder a la modificacion de listas o de Strings
         //**************************************************************************
         String polinomio=polinomio1;//"5X^2+3X^4|*|3X^1";
@@ -90,7 +91,8 @@ public class Modelo
         String base1="";
         String variable="";
         String exponente1="";
-        int base , exponente;
+        int  exponente;
+        int base;
         
         boolean lista=true;
         boolean siguienteNodo=false;
@@ -114,16 +116,18 @@ public class Modelo
             else if(polinomio.substring(contador,y).equals("+") || polinomio.substring(contador,y).equals("-") )
             {
                 exponenteP=false;
-                if (polinomio.substring(contador,y).equals("-") && base1.equals(""))
-                {}
-                else
+                if (!(polinomio.substring(contador,y).equals("-") && base1.equals("")))
                 {
-                    siguienteNodo=true;//permite agregar al siguiente nodo
-                } 
+                 siguienteNodo=true;//permite agregar al siguiente nodo
+                
+                }
+                
+
             }
             
             else if(polinomio.substring(contador,y).equals("^"))
             {
+                
                 y++;
                 contador++;
                 variableP=false;//permite agregar la variable
@@ -132,27 +136,43 @@ public class Modelo
             
             else if(polinomio.substring(contador,y).equals("|"))
             {
-                 exponenteP=false;
+                exponenteP=false;
+                if (polinomio.substring(contador+1,y+1).equals("+"))
+                {
+                    siguienteNodo=true;//permite agregar al siguiente nodo
+                    y=y+2;
+                    contador=contador+2;
+                    exponenteP=false;
+                    operacion="+"; 
+                }
+                else if (polinomio.substring(contador+1,y+1).equals("-"))
+                {
+                    siguienteNodo=true;//permite agregar al siguiente nodo
+                    y=y+2;
+                    contador=contador+2;
+                    exponenteP=false;
+                    operacion="-"; 
+                }
+                 
             }
             
             else if(polinomio.substring(contador,y).equals("/")) 
             {
                 siguienteNodo=true;//permite agregar al siguiente nodo
-                lista=false;
-                multiplicacion=true;
                 y++;
                 contador++;
                 exponenteP=false;
+                operacion="/"; 
                 //Falta hacer recorrido
             }
             else if(polinomio.substring(contador,y).equals("*"))
             {
                 siguienteNodo=true;//permite agregar al siguiente nodo
-                lista=false;//falta Hacer recorrido
-                division=true;
                 y++;
                 contador++;
                 exponenteP=false;
+                operacion="*"; 
+                
             }
             
             if (baseP==true )//permite agregar a la base
@@ -192,12 +212,14 @@ public class Modelo
                     variable="";
                     exponente1="";
                 }
+                if (!(operacion.equals("")))
+                {lista=false;}
             }
-            if (lista==false && siguienteNodo==true || y==polinomio.length())//Permite agrregar a la lista 1
+            if ((lista==false && siguienteNodo==true) || y==polinomio.length())//Permite agrregar a la lista 1
             {
                 base= Integer.parseInt(base1);
                 exponente=Integer.parseInt(exponente1);
-                 
+                lista2.insertar(new Monomio(base, variable, exponente));  
                 siguienteNodo=false;
                 exponenteP=false;
                 baseP=true;
@@ -250,8 +272,49 @@ public class Modelo
         return lista2.obtenerTamannio();
     }
     //********************************************************************************
-    public void realizarOperaciones()
+    public void vectorLista1()
     {
-    
+        Monomio[] vectorLista1=lista1.getData();
+        Monomio[] vectorLista2=lista2.getData();
+        int base=0;
+        int exponente=0;
+        String variable="";
+        if (operacion.equals("*"))
+        {
+            for(int i=0;i<vectorLista1.length;i++)
+            {
+                for(int j=0;j<vectorLista2.length;j++){
+                    
+                    base=vectorLista1[i].getBase()*vectorLista2[j].getBase();
+                    variable=vectorLista1[i].getVariable();
+                    exponente=vectorLista1[i].getExponente()+vectorLista2[j].getExponente();
+                    
+                    
+                    lista3.insertar(new Monomio(base, variable, exponente)); 
+                }
+            }
+        }
+        else if (operacion.equals("/"))
+        {
+            
+            for(int i=0;i<vectorLista1.length;i++)
+            {
+                for(int j=0;j<vectorLista2.length;j++){
+                    
+                    base=vectorLista1[i].getBase()/vectorLista2[j].getBase();
+                    variable=vectorLista1[i].getVariable();
+                    exponente=vectorLista1[i].getExponente()-vectorLista2[j].getExponente();
+                    
+                    
+                    lista3.insertar(new Monomio(base, variable, exponente)); 
+                }
+            }
+        }
+        
     }
+    public Lista obtenerLista3()
+    {
+        
+        return lista3;
+    } 
 }

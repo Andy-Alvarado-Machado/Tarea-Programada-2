@@ -8,7 +8,8 @@
 public class Monomio
 {
     private String variable;
-    private int base ,exponente;
+    private int base;
+    private int exponente;
    
     Monomio(int base, String variable, int exponente)
     {

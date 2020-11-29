@@ -15,6 +15,7 @@ public class Controlador
     {
         Lista lista1;
         Lista lista2;
+        Lista lista3;
         String operacion, variable;
         int opcion=vista.pedirOpcion(),respuesta=0,base,exponente,respuesta2=0;
         if(opcion==1)
@@ -34,6 +35,14 @@ public class Controlador
                 modelo.obtenerDatosLista2(base,variable,exponente);
                 respuesta2=Integer.parseInt(JOptionPane.showInputDialog("¿Desea agregar otro monomio?:\n1-Sí\n2-No")); 
             }while(respuesta2==1);
+            lista1=modelo.obtenerLista1();
+            lista2=modelo.obtenerLista2();
+            lista1.mostrar(); 
+            System.out.println();
+            lista2.mostrar();
+            System.out.print("\n"+modelo.obtenerTamannio1());
+            
+            System.out.print("\n"+modelo.obtenerTamannio2());
             /*
             operacion=vista.pedirString();
             lista1=modelo.obtenerLista1();
@@ -46,11 +55,20 @@ public class Controlador
             modelo.LeerOperaciones();
             lista1=modelo.obtenerLista1();
             lista2=modelo.obtenerLista2();
+           
             lista1.mostrar(); 
+            System.out.println();
             lista2.mostrar();
+            System.out.println();
             
-            System.out.print("\n"+modelo.obtenerTamannio1());
-            System.out.print("\n"+modelo.obtenerTamannio2());
+            modelo.vectorLista1();
+            lista3=modelo.obtenerLista3();
+            lista3.mostrar();
+            
+            //System.out.print("\n"+modelo.obtenerTamannio1());
+            //System.out.print("\n"+modelo.obtenerTamannio2());
+            
+            
         }
 
     }
