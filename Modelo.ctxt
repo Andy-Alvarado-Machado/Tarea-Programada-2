@@ -2,11 +2,13 @@
 comment0.target=Modelo
 comment1.params=
 comment1.target=void\ LeerOperaciones()
-comment1.text=\r\n\ \ \ \ public\ void\ escribir()throws\ IOException\r\n\ \ \ \ {\r\n\ \ \ \ \ \ \ \ \r\n\ \ \ \ \ \ \ \ //Lista2\ lista2\ \=\ new\ Lista2();\r\n\ \ \ \ \ \ \ \ FileWriter\ archivo\ \=\ null;\r\n\ \ \ \ \ \ \ \ PrintWriter\ escritor\ \=\ null;\r\n\ \ \ \ \ \ \ \ \r\n\ \ \ \ \ \ \ \ try\r\n\ \ \ \ \ \ \ \ {\r\n\ \ \ \ \ \ \ \ \ \ \ //\ archivo\ \=\ new\ FileWriter("C\:\\\\Users\\\\jamej\\\\Desktop\\\\Tarea-Programada-2\\\\"+vista.nombreArchivo()+".txt");\r\n\ \ \ \ \ \ \ \ \ \ \ \ escritor\ \=\ new\ PrintWriter(archivo);\r\n\ \ \ \ \ \ \ \ \ \ \ \ escritor.print("Prueba\ escritura");\r\n\r\n\ \ \ \ \ \ \ \ }\r\n\ \ \ \ \ \ \ \ catch(Exception\ e)\r\n\ \ \ \ \ \ \ \ {\r\n\ \ \ \ \ \ \ \ \ \ \ \ throw\ e;\r\n\ \ \ \ \ \ \ \ }\r\n\ \ \ \ \ \ \ \ finally\r\n\ \ \ \ \ \ \ \ {\r\n\ \ \ \ \ \ \ \ \ \ \ \ archivo.close();\r\n\ \ \ \ \ \ \ \ }\r\n\ \ \ \ }\r\n
+comment1.text=\r\n\ \ \ \ public\ void\ escribir()throws\ IOException\r\n\ \ \ \ {\r\n\r\n\ \ \ \ //Lista2\ lista2\ \=\ new\ Lista2();\r\n\ \ \ \ FileWriter\ archivo\ \=\ null;\r\n\ \ \ \ PrintWriter\ escritor\ \=\ null;\r\n\r\n\ \ \ \ try\r\n\ \ \ \ {\r\n\ \ \ \ //\ archivo\ \=\ new\ FileWriter("C\:\\\\Users\\\\jamej\\\\Desktop\\\\Tarea-Programada-2\\\\"+vista.nombreArchivo()+".txt");\r\n\ \ \ \ escritor\ \=\ new\ PrintWriter(archivo);\r\n\ \ \ \ escritor.print("Prueba\ escritura");\r\n\r\n\ \ \ \ }\r\n\ \ \ \ catch(Exception\ e)\r\n\ \ \ \ {\r\n\ \ \ \ throw\ e;\r\n\ \ \ \ }\r\n\ \ \ \ finally\r\n\ \ \ \ {\r\n\ \ \ \ archivo.close();\r\n\ \ \ \ }\r\n\ \ \ \ }\r\n
 comment10.params=
-comment10.target=void\ vectorLista1()
+comment10.target=int\ obtenerTamannio2()
 comment11.params=
-comment11.target=Lista\ obtenerLista3()
+comment11.target=void\ vectorLista1()
+comment12.params=
+comment12.target=Lista\ obtenerLista3()
 comment2.params=polinomio1
 comment2.target=void\ separarPolinomios(java.lang.String)
 comment3.params=base\ variable\ exponente
@@ -15,12 +17,12 @@ comment4.params=base\ variable\ exponente
 comment4.target=void\ obtenerDatosLista2(int,\ java.lang.String,\ int)
 comment5.params=
 comment5.target=java.lang.String\ operador()
-comment6.params=
-comment6.target=Lista\ obtenerLista1()
+comment6.params=operacion
+comment6.target=void\ setOperador(java.lang.String)
 comment7.params=
-comment7.target=Lista\ obtenerLista2()
+comment7.target=Lista\ obtenerLista1()
 comment8.params=
-comment8.target=int\ obtenerTamannio1()
+comment8.target=Lista\ obtenerLista2()
 comment9.params=
-comment9.target=int\ obtenerTamannio2()
-numComments=12
+comment9.target=int\ obtenerTamannio1()
+numComments=13
