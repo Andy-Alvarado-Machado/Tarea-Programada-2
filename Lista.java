@@ -64,7 +64,16 @@ public class Lista
         }
     }
     
-    
+    public int obtenerTamannio(){
+        int contador=0;
+        while (inicio!=null)
+        {
+            contador++;
+            inicio= inicio.getSiguiente();
+        }
+        
+        return contador;
+    }
     
     
     public Nodo getInicio(){

@@ -19,6 +19,7 @@ public class Modelo
     Lista lista1=new Lista();
     Lista lista2=new Lista();
     String polinomio;
+    String operacion="";
     /*
     public void escribir()throws IOException
     {
@@ -226,6 +227,11 @@ public class Modelo
     lista2.insertar(new Monomio(base, variable, exponente)); 
      lista2.mostrar();
     }
+    //************************************se pueden borrar despues
+    public String operador()
+    {
+        return operacion;
+    } 
     
     public Lista obtenerLista1()
     {
@@ -237,5 +243,15 @@ public class Modelo
         return lista2;
     }
 
+    public int obtenerTamannio1(){
+        return lista1.obtenerTamannio();
+    }
+    public int obtenerTamannio2(){
+        return lista2.obtenerTamannio();
+    }
+    //********************************************************************************
+    public void realizarOperaciones()
+    {
     
+    }
 }

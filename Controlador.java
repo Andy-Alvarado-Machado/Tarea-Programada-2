@@ -48,6 +48,9 @@ public class Controlador
             lista2=modelo.obtenerLista2();
             lista1.mostrar(); 
             lista2.mostrar();
+            
+            System.out.print("\n"+modelo.obtenerTamannio1());
+            System.out.print("\n"+modelo.obtenerTamannio2());
         }
 
     }
