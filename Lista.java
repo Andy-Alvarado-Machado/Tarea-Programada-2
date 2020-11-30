@@ -5,18 +5,19 @@
  * @author (James Araya, Andy Alvarado) 
  * @version (04)
  */
+import javax.swing.JOptionPane;
 public class Lista
 {
-    
-     Nodo inicio;
-     Nodo fin;
-   
+
+    Nodo inicio;
+    Nodo fin;
+    String Lista="";
     public Lista()
     {
         inicio= null;
         fin=null;
     }
-    
+
     public boolean listVacia()
     {
         if (inicio==null)
@@ -28,7 +29,7 @@ public class Lista
             return false;
         }
     }
-    
+
     public void insertar(Monomio dato)
     {
         Nodo actual;
@@ -45,7 +46,7 @@ public class Lista
             fin=actual;
         }
     }
-    
+
     public void mostrar() 
     {
         if(listVacia())
@@ -59,14 +60,14 @@ public class Lista
             temporal=inicio;
             while(temporal!=null)
             {
-                System.out.print(temporal.getDato().toString());
+                Lista+= temporal.getDato().toString();
                 temporal=temporal.getSiguiente();
-                //JOptionPane.showMessageDialog(null,temporal.getDato().toString());
-               
             }
+            JOptionPane.showMessageDialog(null,Lista);
         }
+        Lista="";
     }
-    
+
     public int obtenerTamannio(){
         int contador=0;
         Nodo temporal;
@@ -76,17 +77,17 @@ public class Lista
             contador++;
             temporal= temporal.getSiguiente();
         }
-        
+
         return contador;
     }
-    
+
     public Monomio[] getData(){
-        
+
         int contador=0;
-        
+
         Monomio[] vectorMonomios=new Monomio[obtenerTamannio()];
         Nodo temp=inicio;
-        
+
         while (temp!=null)
         {
             vectorMonomios[contador]=temp.getDato();
@@ -96,18 +97,14 @@ public class Lista
         limpiar();
         return vectorMonomios;
     }
-    
-    
+
     public void limpiar(){
-        
-     inicio=null;
-     fin=null;
+        inicio=null;
+        fin=null;
     }
-    
-    
+
     public Nodo getInicio(){
-    return this.inicio;
+        return this.inicio;
     }
 }
-
 
