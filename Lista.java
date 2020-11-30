@@ -1,9 +1,9 @@
 
 /**
- * Write a description of class Lista here.
+ * Inicializa la lista y sus diferentes metodos
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author (James Araya, Andy Alvarado) 
+ * @version (04)
  */
 public class Lista
 {
@@ -61,6 +61,8 @@ public class Lista
             {
                 System.out.print(temporal.getDato().toString());
                 temporal=temporal.getSiguiente();
+                //JOptionPane.showMessageDialog(null,temporal.getDato().toString());
+               
             }
         }
     }
@@ -91,7 +93,7 @@ public class Lista
             contador++;
             temp= temp.getSiguiente();
         }
-        
+        limpiar();
         return vectorMonomios;
     }
     

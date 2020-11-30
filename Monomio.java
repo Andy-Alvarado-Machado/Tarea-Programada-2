@@ -1,9 +1,8 @@
-
 /**
- * Write a description of class Polinomio here.
+ * Almacena los datos de cada lista
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author (James Araya, Andy Alvarado) 
+ * @version (05)
  */
 public class Monomio
 {

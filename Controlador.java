@@ -1,9 +1,9 @@
 
 /**
- * Write a description of class Controlador here.
+ * Realiza el llamado las diferentes funcionalidades
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author (James Araya, Andy Alvarado) 
+ * @version (01)
  */
 import javax.swing.JOptionPane;
 public class Controlador
@@ -50,34 +50,18 @@ public class Controlador
             System.out.println();
             System.out.print("Lista 3: ");
 
-            modelo.vectorLista1();
+            modelo.operarPolinomios();
             lista3=modelo.obtenerLista3();
             lista3.mostrar();
-            /*
-            operacion=vista.pedirString();
-            lista1=modelo.obtenerLista1();
-            lista2=modelo.obtenerLista2();
-            lista1.mostrar();
-            System.out.print(operacion);
-            lista2.mostrar();
-             */
-        }else if(opcion==2){
+            
+            lista1.limpiar();
+            lista2.limpiar();
+            lista3.limpiar();
+            
+        }
+        else if(opcion==2)
+        {
             modelo.LeerOperaciones();
-            lista1=modelo.obtenerLista1();
-            lista2=modelo.obtenerLista2();
-
-            lista1.mostrar(); 
-            System.out.println();
-            lista2.mostrar();
-            System.out.println();
-
-            modelo.vectorLista1();
-            lista3=modelo.obtenerLista3();
-            lista3.mostrar();
-
-            //System.out.print("\n"+modelo.obtenerTamannio1());
-            //System.out.print("\n"+modelo.obtenerTamannio2());
-
         }
     }
 }
